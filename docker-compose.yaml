@@ -1,0 +1,26 @@
+version: "3"
+services:
+  db:
+    image: postgres:latest
+    container_name: ec-db
+    hostname: ec-db
+    environment:
+      POSTGRES_PASSWORD: "1234567890"
+    networks:
+      - ecnet
+  api:
+    build: .
+    container_name: ec-api
+    hostname: ec-api
+    environment:
+      EC_DB_CS: "Server=ec-db;Port=5432;Database=ecommerce;User Id=postgres;Password=1234567890;"
+    ports:
+      - 80:80
+    networks:
+      - ecnet
+    depends_on:
+      - db
+    restart: always
+networks:
+  ecnet:
+    driver: bridge

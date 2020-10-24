@@ -1,0 +1,19 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>netcoreapp3.1</TargetFramework>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\ECommerce.Data\ECommerce.Data.csproj" />
+      <ProjectReference Include="..\Ecommerce.Dto\Ecommerce.Dto.csproj" />
+      <ProjectReference Include="..\ECommerce.Entity\ECommerce.Entity.csproj" />
+      <ProjectReference Include="..\Ecommerce.Repository\Ecommerce.Repository.csproj" />
+      <ProjectReference Include="..\ECommerce.UnitOfWork\ECommerce.UnitOfWork.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <PackageReference Include="FluentValidation" Version="9.2.2" />
+    </ItemGroup>
+
+</Project>
